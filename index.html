@@ -1,44 +1,46 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="fr">
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="media/monfavicon.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Accueil - Ömer Gürsel</title>
-    <link rel="stylesheet" href="style.css">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="styles_index.css">
 </head>
-
 <body>
+    <header>
+        <!-- Barre de navigation supérieure -->
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html"><img src="media/logomenu.png" alt="Votre logo"></a>
+            </div>
+            <div class="menu">
+                <ul>
+                    <li><a href="parcours.html">Mon parcours</a></li>
+                    <li><a href="competences.html">Mes compétences</a></li>
+                    <li><a href="contact.html">Me contacter</a></li>
+                    <li><a href="connexion.html">Se connecter</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
 
-<div class="wrapper">
-    <form action="">
-        <h1>Se connecter</h1>
-        <div class="input-box">
-            <input type="text" placeholder="Nom d'utilisateur" required />
-            <i class='bx bxs-user'></i>
-        </div>
-        <div class="input-box">
-            <input type="password" placeholder="Mot de passe" required />
-            <i class='bx bxs-lock-alt' ></i>
-        </div>
-        
-        <div class="remember-forgot">
-            <label><input type="checkbox"> Se souvenir de moi</label>
-            <a href="#">Mot de passe oublié ?</a>
-        </div>
+    <main>
+        <!-- Section de présentation -->
+        <section class="presentation">
+            <h1>Je m'appelle Ömer Gürsel</h1>
+            <p>Une brève description de vous-même ou de votre activité.</p>
+        </section>
+    </main>
 
-        <button type="submit" class="btn">Se connecter</button>
-
-        <div class="register-link">
-            <p>Vous n'avez pas de compte ?
-                <a href="#">Créer un compte</a>
-            </p>
-        </div>
-    </form>
-</div>
-
+    <footer>
+        <!-- Pied de page avec informations de contact, liens sociaux, etc. -->
+        <p>Contactez-moi: omergursel@example.com</p>
+        <ul class="social-links">
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">Twitter</a></li>
+            <li><a href="#">LinkedIn</a></li>
+        </ul>
+    </footer>
 </body>
-
 </html>
