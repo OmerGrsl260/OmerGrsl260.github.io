@@ -31,7 +31,7 @@
 
     <div class="wrapper">
         <div class="contact-form">
-            <form action="http://13.38.57.213/submit_feedback.php" method="POST">
+            <form id="contact-form" method="POST">
                 <h1>Contactez-moi</h1>
                 <div class="input-box">
                     <input type="text" name="name" placeholder="Votre Nom" required />
@@ -43,14 +43,10 @@
                     <textarea name="message" placeholder="Votre message" required></textarea>
                 </div>
                 <button type="submit" class="btn">Envoyer</button>
-            </form>            
+            </form>
+            <div id="status"></div>
         </div>
     </div>
-
-    <div id="feedback-section">
-        <h2>Feedbacks reçus</h2>
-        <iframe src="http://13.38.57.213/fetch_feedback.php" width="100%" height="400px"></iframe>
-    </div>    
 
     <div class="contact-info">
         <div class="info-block">
@@ -75,6 +71,25 @@
             </ul>
         </div>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const form = event.target;
+            const formData = new FormData(form);
+            
+            axios.post('https://formsubmit.co/grsl.omer@gmail.com', formData)
+                .then(response => {
+                    document.getElementById('status').innerText = 'Message envoyé avec succès !';
+                    form.reset();
+                })
+                .catch(error => {
+                    document.getElementById('status').innerText = 'Échec de l\'envoi du message. Veuillez réessayer.';
+                });
+        });
+    </script>
 </body>
 
 </html>
