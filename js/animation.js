@@ -14,6 +14,12 @@ const programmingIcons = [
 
 // Création des éléments flottants
 function createFloatingElements() {
+    // Nettoyer les anciens éléments s'ils existent
+    const existingContainer = document.querySelector('.floating-elements');
+    const existingBackground = document.querySelector('.animated-background');
+    if (existingContainer) existingContainer.remove();
+    if (existingBackground) existingBackground.remove();
+
     const container = document.createElement('div');
     container.className = 'floating-elements';
     document.body.appendChild(container);
@@ -23,35 +29,13 @@ function createFloatingElements() {
     background.className = 'animated-background';
     document.body.appendChild(background);
 
-    // Création des icônes flottantes
-    setInterval(() => {
-        if (container.children.length < 20) { // Limite le nombre d'icônes
-            const icon = document.createElement('i');
-            icon.className = `floating-icon fas ${programmingIcons[Math.floor(Math.random() * programmingIcons.length)]}`;
-            
-            // Position aléatoire
-            icon.style.left = `${Math.random() * 100}%`;
-            icon.style.fontSize = `${Math.random() * 20 + 10}px`;
-            
-            // Durée d'animation aléatoire
-            const duration = Math.random() * 10 + 10;
-            icon.style.animation = `float ${duration}s linear infinite`;
-            
-            container.appendChild(icon);
-            
-            // Supprime l'icône après l'animation
-            setTimeout(() => {
-                icon.remove();
-            }, duration * 1000);
-        }
-    }, 1000);
+    return { container, background };
 }
 
 // Initialisation
 document.addEventListener('DOMContentLoaded', () => {
-    createFloatingElements();
-
-    const background = document.querySelector('.animated-background');
+    // Créer les éléments de base
+    const { container, background } = createFloatingElements();
     
     // Créer les conteneurs pour les points et les formes
     const networkPoints = document.createElement('div');
