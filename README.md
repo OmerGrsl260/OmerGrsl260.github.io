@@ -4,27 +4,37 @@
 
 ## 🌟 Présentation
 
-Portfolio professionnel présentant mon parcours, mes compétences et mes réalisations en tant que développeur web Full Stack. Le site est conçu avec une approche moderne, responsive et accessible.
+Portfolio professionnel présentant mon parcours, mes compétences et mes réalisations en tant que QA Software Test Engineer. Le site est conçu pour mettre en valeur mon expertise en automatisation des tests et assurance qualité.
 
-## 🚀 Technologies Utilisées
+## 🚀 Technologies et Outils
 
-- **Frontend :**
-  - HTML5
-  - CSS3 avec variables personnalisées
-  - JavaScript moderne
+- **Test Automation :**
+  - Selenium
+  - Cucumber
+  - Java
+  - Test Agile
+  
+- **Outils QA :**
+  - JIRA
+  - Xray
+  - Git
+  - Scrum
+  
+- **Développement Web :**
+  - HTML5/CSS3
+  - JavaScript
   - Bootstrap 5
-  - Font Awesome 6
-  - AOS (Animate On Scroll)
+  - Responsive Design
 
 ## 📱 Fonctionnalités
 
 - Design responsive adapté à tous les appareils
-- Animations fluides et optimisées
+- Présentation des compétences en QA
+- Timeline du parcours professionnel
 - Formulaire de contact sécurisé
-- Système d'authentification
+- Animations fluides
 - Support du mode sombre
 - Optimisations SEO
-- Accessibilité (ARIA)
 
 ## 📂 Structure du Projet
 
@@ -34,14 +44,12 @@ Portfolio professionnel présentant mon parcours, mes compétences et mes réali
 ├── parcours.html          # Page de parcours professionnel
 ├── competences.html       # Page des compétences
 ├── contact.html           # Page de contact
-├── connexion.html         # Page de connexion
 ├── css/
 │   ├── styles_common.css  # Styles partagés
 │   ├── styles_index.css   # Styles spécifiques à l'accueil
 │   ├── styles_parcours.css
 │   ├── styles_competences.css
-│   ├── styles_contact.css
-│   └── styles_connexion.css
+│   └── styles_contact.css
 └── img/                   # Dossier des images
 ```
 
@@ -56,7 +64,6 @@ Portfolio professionnel présentant mon parcours, mes compétences et mes réali
 ## 🔒 Sécurité
 
 - Protection contre les injections XSS
-- Protection CSRF
 - En-têtes de sécurité
 - Validation des entrées
 - Sanitization des données
@@ -115,11 +122,5 @@ Les contributions sont les bienvenues ! N'hésitez pas à :
 
 Ce projet est sous licence MIT - voir le fichier [LICENSE](LICENSE) pour plus de détails.
 
-## 📧 Contact
-
-- Email : contact@omergursel.com
-- LinkedIn : [Ömer Gürsel](https://linkedin.com/in/omer-gursel)
-- Site Web : [omergursel.com](https://omergursel.com)
-
 ---
-© 2024 Ömer Gürsel. Tous droits réservés. 
+© 2025 Ömer Gürsel - Tous droits réservés

@@ -1,0 +1,179 @@
+/* Fond dynamique */
+.animated-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: linear-gradient(45deg, #000428, #004e92);
+    overflow: hidden;
+}
+
+/* Éléments flottants */
+.floating-elements {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.floating-icon {
+    position: absolute;
+    color: rgba(255, 255, 255, 0.1);
+    animation: float 20s linear infinite;
+}
+
+/* Points et lignes */
+.network-points {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+/* Formes géométriques flottantes */
+.floating-shapes {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.shape {
+    position: absolute;
+    opacity: 0.15;
+    border: 2px solid rgba(255, 255, 255, 0.7);
+}
+
+.shape.triangle {
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-bottom: 35px solid rgba(255, 255, 255, 0.15);
+    animation: floatAndRotate 30s infinite linear;
+}
+
+.shape.circle {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    animation: floatAndRotate 35s infinite linear;
+}
+
+.shape.square {
+    width: 25px;
+    height: 25px;
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    animation: floatAndRotate 40s infinite linear;
+}
+
+@keyframes floatAndRotate {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    25% {
+        transform: translate(100px, -50px) rotate(90deg);
+    }
+    50% {
+        transform: translate(50px, 100px) rotate(180deg);
+    }
+    75% {
+        transform: translate(-50px, 50px) rotate(270deg);
+    }
+    100% {
+        transform: translate(0, 0) rotate(360deg);
+    }
+}
+
+/* Points brillants */
+.glow-point {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    opacity: 0.7;
+    transition: transform 3s ease-out;
+}
+
+@keyframes glowAnimation {
+    from {
+        opacity: 0.3;
+        box-shadow: 0 0 5px #fff, 0 0 10px #fff;
+    }
+    to {
+        opacity: 0.6;
+        box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff;
+    }
+}
+
+/* Police dynamique */
+@keyframes textGlow {
+    0% { text-shadow: 0 0 10px rgba(100, 255, 218, 0.5); }
+    50% { text-shadow: 0 0 20px rgba(100, 255, 218, 0.8); }
+    100% { text-shadow: 0 0 10px rgba(100, 255, 218, 0.5); }
+}
+
+/* Styles généraux mis à jour */
+body {
+    background: none;
+}
+
+h1, h2, h3 {
+    animation: textGlow 3s ease-in-out infinite;
+    color: #e6f1ff;
+}
+
+.wrapper {
+    position: relative;
+    z-index: 1;
+}
+
+/* Mise à jour des cartes et conteneurs */
+.skill-card, .timeline-content, .login-card, .contact-form {
+    background: rgba(17, 34, 64, 0.6);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(100, 255, 218, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-card:hover, .timeline-content:hover, .login-card:hover, .contact-form:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(100, 255, 218, 0.1);
+}
+
+/* Mise à jour des boutons */
+.btn, .submit-btn, .login-btn {
+    background: linear-gradient(45deg, #64ffda, #0a192f);
+    background-size: 200% 200%;
+    animation: gradientBG 5s ease infinite;
+    border: none;
+    color: white;
+    transition: transform 0.3s ease;
+}
+
+.btn:hover, .submit-btn:hover, .login-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(100, 255, 218, 0.2);
+}
+
+/* Mise à jour des inputs */
+.form-control {
+    background: rgba(17, 34, 64, 0.3);
+    border: 1px solid rgba(100, 255, 218, 0.1);
+    color: #e6f1ff;
+}
+
+.form-control:focus {
+    background: rgba(17, 34, 64, 0.5);
+    border-color: #64ffda;
+    box-shadow: 0 0 10px rgba(100, 255, 218, 0.2);
+    color: #e6f1ff;
+} 

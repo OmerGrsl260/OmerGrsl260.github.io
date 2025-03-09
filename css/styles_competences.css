@@ -5,7 +5,7 @@
     --primary-color-dark: #45a049;
     --text-color: #ffffff;
     --text-color-muted: rgba(255, 255, 255, 0.8);
-    --background-overlay: rgba(0, 0, 0, 0.8);
+    --background-overlay: rgba(0, 0, 0, 0.45);
     --header-bg: rgba(0, 0, 0, 0.7);
     --header-bg-scrolled: rgba(0, 0, 0, 0.9);
     --card-bg: rgba(255, 255, 255, 0.1);
@@ -72,7 +72,7 @@ body {
     font-family: var(--font-family-base);
     color: var(--text-color);
     background-image: linear-gradient(var(--background-overlay), var(--background-overlay)), 
-                      url('/img/paysage1.jpg');
+                      url('/img/paysage2.png');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -167,8 +167,7 @@ header.scrolled {
 
 /* Contenu principal */
 .wrapper {
-    flex: 1;
-    padding-top: calc(var(--custom-spacing-xl) + 80px);
+    padding-top: calc(var(--header-height) + var(--spacing-xl));
     max-width: var(--container-max-width);
     margin: 0 auto;
     width: 100%;
@@ -243,7 +242,7 @@ header.scrolled {
 }
 
 .skill-card {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: var(--card-bg);
     padding: 2rem;
     border-radius: 1rem;
     backdrop-filter: blur(10px);
@@ -259,18 +258,18 @@ header.scrolled {
 
 .skill-card i {
     font-size: 3rem;
-    color: var(--bs-primary);
+    color: var(--primary-color);
     margin-bottom: 1.5rem;
 }
 
 .skill-card h3 {
     font-size: 1.5rem;
     margin-bottom: 1rem;
-    color: var(--bs-body-color);
+    color: var(--text-color);
 }
 
 .skill-card p {
-    color: rgba(255, 255, 255, 0.8);
+    color: var(--text-color-muted);
     margin-top: 1rem;
     font-size: 0.9rem;
 }
@@ -281,13 +280,13 @@ header.scrolled {
 
 .progress {
     height: 8px;
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: var(--progress-bg);
     border-radius: 4px;
     overflow: hidden;
 }
 
 .progress-bar {
-    background-color: var(--bs-primary);
+    background-color: var(--primary-color);
     transition: width 1s ease-in-out;
 }
 
@@ -350,16 +349,8 @@ footer a:hover {
         --grid-gap: 1.5rem;
     }
 
-    .menu ul {
-        gap: var(--spacing-md);
-    }
-
-    .menu ul li a {
-        font-size: var(--font-size-sm);
-    }
-
     .wrapper {
-        padding-top: calc(var(--custom-spacing-lg) + 80px);
+        padding-top: calc(var(--header-height) + var(--spacing-lg));
     }
 
     .skill-card {
@@ -372,6 +363,10 @@ footer a:hover {
 
     .skill-card h3 {
         font-size: 1.25rem;
+    }
+
+    .skill-card p {
+        font-size: 0.9rem;
     }
 }
 
@@ -405,7 +400,7 @@ footer a:hover {
     }
 
     .skill-card p {
-        font-size: 0.8rem;
+        font-size: 0.85rem;
     }
 }
 
@@ -474,5 +469,160 @@ footer a:hover {
 
     .progress-bar {
         background-color: #000;
+    }
+}
+
+/* Styles spécifiques à la page Compétences */
+
+/* Container principal */
+.competences-container {
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    padding: var(--spacing-lg);
+}
+
+/* En-tête de la page */
+.page-header {
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+}
+
+.page-header h1 {
+    font-size: var(--font-size-3xl);
+    margin-bottom: var(--spacing-md);
+    color: var(--text-color);
+}
+
+.page-header p {
+    font-size: var(--font-size-lg);
+    color: var(--text-color-muted);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Grille de compétences */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-xl);
+}
+
+/* Carte de compétence */
+.skill-card {
+    background: var(--card-bg);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--border-radius-lg);
+    padding: var(--spacing-lg);
+    transition: transform var(--transition-normal);
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+}
+
+.skill-card h3 {
+    font-size: var(--font-size-xl);
+    color: var(--text-color);
+    margin-bottom: var(--spacing-md);
+}
+
+.skill-card p {
+    color: var(--text-color-muted);
+    margin-bottom: var(--spacing-md);
+    font-size: var(--font-size-base);
+}
+
+/* Barre de progression */
+.progress-container {
+    margin-bottom: var(--spacing-sm);
+}
+
+.progress-label {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: var(--spacing-xs);
+    color: var(--text-color);
+    font-size: var(--font-size-sm);
+}
+
+.progress-bar {
+    height: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: var(--border-radius-sm);
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: var(--primary-color);
+    border-radius: var(--border-radius-sm);
+    transition: width var(--transition-normal);
+}
+
+/* Liste de technologies */
+.tech-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-md);
+}
+
+.tech-tag {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-color);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--border-radius-sm);
+    font-size: var(--font-size-sm);
+}
+
+/* Animations */
+.skill-card {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.skill-card.aos-animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .competences-container {
+        padding: var(--spacing-md);
+    }
+
+    .page-header h1 {
+        font-size: var(--font-size-2xl);
+    }
+
+    .page-header p {
+        font-size: var(--font-size-base);
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+}
+
+@media (max-width: 576px) {
+    .competences-container {
+        padding: var(--spacing-sm);
+    }
+
+    .skill-card {
+        padding: var(--spacing-md);
+    }
+
+    .skill-card h3 {
+        font-size: var(--font-size-lg);
+    }
+
+    .skill-card p {
+        font-size: var(--font-size-sm);
     }
 }

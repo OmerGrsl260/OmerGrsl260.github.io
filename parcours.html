@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr-FR">
+<html lang="fr">
 
 <head>
     <!-- Meta tags essentiels -->
@@ -7,23 +7,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- Meta tags SEO -->
-    <meta name="description" content="Découvrez mon parcours professionnel en développement web et mes expériences">
-    <meta name="keywords" content="parcours professionnel, développeur web, expérience, formation, Ömer Gürsel">
+    <meta name="description" content="Découvrez mon parcours professionnel et mes expériences">
+    <meta name="keywords" content="parcours professionnel, expérience, CV, portfolio">
     <meta name="author" content="Ömer Gürsel">
     <meta name="robots" content="index, follow">
     
     <!-- Meta tags Open Graph -->
-    <meta property="og:title" content="Parcours - Ömer Gürsel">
-    <meta property="og:description" content="Découvrez mon parcours professionnel en développement web">
-    <meta property="og:image" content="img/logomenu.png">
-    <meta property="og:url" content="https://omergursel.com/parcours">
+    <meta property="og:title" content="Mon Parcours - Ömer Gürsel">
+    <meta property="og:description" content="Découvrez mon parcours professionnel et mes expériences">
+    <meta property="og:image" content="/img/profile.jpg">
+    <meta property="og:url" content="https://www.omergursel.fr/parcours.html">
     <meta property="og:type" content="website">
     
     <!-- Meta tags Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Parcours - Ömer Gürsel">
-    <meta name="twitter:description" content="Découvrez mon parcours professionnel en développement web">
-    <meta name="twitter:image" content="img/logomenu.png">
+    <meta name="twitter:title" content="Mon Parcours - Ömer Gürsel">
+    <meta name="twitter:description" content="Découvrez mon parcours professionnel et mes expériences">
+    <meta name="twitter:image" content="/img/profile.jpg">
     
     <!-- Thème et couleurs -->
     <meta name="theme-color" content="#4CAF50">
@@ -38,175 +38,104 @@
     
     <!-- CSS -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="css/styles_common.css">
     <link rel="stylesheet" href="css/styles_parcours.css">
+    <link rel="stylesheet" href="css/styles_animation.css">
     
-    <title>Mon parcours - Ömer Gürsel</title>
+    <title>Mon Parcours - Ömer Gürsel</title>
 </head>
 
 <body>
-    <header>
-        <nav class="navbar navbar-expand-lg fixed-top">
-            <div class="container">
-                <a class="navbar-brand" href="index.html" aria-label="Retour à l'accueil">
-                    <img src="img/logomenu.png" alt="Logo Ömer Gürsel" width="50" height="50">
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
-                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <i class="fas fa-bars text-white"></i>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.html">Accueil</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" href="parcours.html" aria-current="page">Mon parcours</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="competences.html">Mes compétences</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="contact.html">Me contacter</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="connexion.html">Se connecter</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
-
-    <main class="wrapper">
-        <div class="container py-5">
-            <h1 class="text-center display-4 mb-5" id="parcours-title">Mon Parcours</h1>
-            
-            <div class="timeline">
-                <div class="timeline-item" data-aos="fade-right">
-                    <div class="timeline-dot">
-                        <i class="fas fa-graduation-cap"></i>
-                    </div>
-                    <div class="timeline-content">
-                        <time class="timeline-date" datetime="2023">2023 - Présent</time>
-                        <h2>Développeur Full Stack</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                        <div class="timeline-tags">
-                            <span class="badge bg-primary">React</span>
-                            <span class="badge bg-primary">Node.js</span>
-                            <span class="badge bg-primary">MongoDB</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="timeline-item" data-aos="fade-left">
-                    <div class="timeline-dot">
-                        <i class="fas fa-briefcase"></i>
-                    </div>
-                    <div class="timeline-content">
-                        <time class="timeline-date" datetime="2022">2022 - 2023</time>
-                        <h2>Développeur Front-end</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                        <div class="timeline-tags">
-                            <span class="badge bg-primary">HTML5</span>
-                            <span class="badge bg-primary">CSS3</span>
-                            <span class="badge bg-primary">JavaScript</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="timeline-item" data-aos="fade-right">
-                    <div class="timeline-dot">
-                        <i class="fas fa-code"></i>
-                    </div>
-                    <div class="timeline-content">
-                        <time class="timeline-date" datetime="2021">2021 - 2022</time>
-                        <h2>Formation Développement Web</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                        <div class="timeline-tags">
-                            <span class="badge bg-primary">Web</span>
-                            <span class="badge bg-primary">UI/UX</span>
-                            <span class="badge bg-primary">Responsive</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </main>
-
-    <footer class="text-center">
+    <nav class="navbar navbar-expand-lg">
         <div class="container">
-            <p class="mb-3">
-                Contactez-moi: 
-                <a href="mailto:contact@omergursel.com" class="text-white text-decoration-none" aria-label="Envoyer un email">
-                    contact@omergursel.com
-                </a>
-            </p>
-            <ul class="social-links">
-                <li>
-                    <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-                        <i class="fab fa-facebook"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                </li>
-            </ul>
+            <a class="navbar-brand" href="index.html">
+                <img src="img/logomenu.png" alt="Logo Ömer Gürsel">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="parcours.html">Parcours</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="competences.html">Compétences</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
         </div>
+    </nav>
+
+    <div class="wrapper">
+        <div class="parcours-container">
+            <div class="page-header">
+                <h1>Mon Parcours</h1>
+                <p>Découvrez mon parcours professionnel et mes expériences</p>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-entry" data-aos="fade-up">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h2 class="timeline-title">QA Software Test Engineer</h2>
+                        <p class="timeline-subtitle">Juillet 2023 - Présent | RemeConsult</p>
+                        <p class="timeline-description">
+                            Ingénieur QA spécialisé dans l'automatisation des tests et l'assurance qualité.
+                            Utilisation des outils : JIRA, Xray, Selenium, Cucumber.
+                            Méthodologie Scrum et gestion du cycle de vie des logiciels (SDLC).
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-entry" data-aos="fade-up" data-aos-delay="200">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h2 class="timeline-title">Stage en Développement Web</h2>
+                        <p class="timeline-subtitle">2022 - 2023 | Start-up ABC</p>
+                        <p class="timeline-description">
+                            Participation au développement de fonctionnalités front-end et back-end.
+                            Collaboration avec une équipe agile et multiculturelle.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-entry" data-aos="fade-up" data-aos-delay="400">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h2 class="timeline-title">Formation Développeur Web</h2>
+                        <p class="timeline-subtitle">2021 - 2022 | École 42</p>
+                        <p class="timeline-description">
+                            Formation intensive en développement web et programmation.
+                            Acquisition de compétences techniques et soft skills essentielles.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>© 2025 Ömer Gürsel - Tous droits réservés</p>
     </footer>
 
-    <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/animation.js"></script>
     <script>
-        // Initialisation des animations AOS avec optimisation des performances
         AOS.init({
             duration: 800,
-            once: true,
-            disable: window.matchMedia('(prefers-reduced-motion: reduce)').matches
-        });
-
-        // Effet de scroll sur le header avec optimisation des performances
-        let lastScrollPosition = 0;
-        const header = document.querySelector('.navbar');
-        const scrollThreshold = 50;
-
-        const handleScroll = () => {
-            requestAnimationFrame(() => {
-                const currentScrollPosition = window.scrollY;
-                
-                if (Math.abs(currentScrollPosition - lastScrollPosition) > scrollThreshold) {
-                    if (currentScrollPosition > scrollThreshold) {
-                        header.classList.add('scrolled');
-                    } else {
-                        header.classList.remove('scrolled');
-                    }
-                    lastScrollPosition = currentScrollPosition;
-                }
-            });
-        };
-
-        window.addEventListener('scroll', handleScroll, { passive: true });
-
-        // Gestion des erreurs de chargement des images
-        document.addEventListener('DOMContentLoaded', () => {
-            const images = document.querySelectorAll('img');
-            images.forEach(img => {
-                img.addEventListener('error', () => {
-                    img.src = '/img/fallback-image.png';
-                    img.alt = 'Image non disponible';
-                });
-            });
+            once: true
         });
     </script>
 </body>

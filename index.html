@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr-FR">
+<html lang="fr">
 
 <head>
     <!-- Meta tags essentiels -->
@@ -7,22 +7,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- Meta tags SEO -->
-    <meta name="description" content="Portfolio professionnel de Ömer Gürsel - Développeur Web Full Stack">
-    <meta name="keywords" content="développeur web, full stack, portfolio, Ömer Gürsel">
+    <meta name="description" content="Portfolio de Ömer Gürsel - QA Software Test Engineer">
+    <meta name="keywords" content="portfolio, QA, test engineer, software testing, automation">
     <meta name="author" content="Ömer Gürsel">
     <meta name="robots" content="index, follow">
     
     <!-- Meta tags Open Graph pour les réseaux sociaux -->
-    <meta property="og:title" content="Ömer Gürsel - Développeur Web Full Stack">
-    <meta property="og:description" content="Portfolio professionnel présentant mes projets et compétences en développement web">
-    <meta property="og:image" content="img/logomenu.png">
-    <meta property="og:url" content="https://omergursel.com">
+    <meta property="og:title" content="Ömer Gürsel - QA Software Test Engineer">
+    <meta property="og:description" content="Portfolio de Ömer Gürsel - QA Software Test Engineer">
+    <meta property="og:image" content="/img/profile.jpg">
+    <meta property="og:url" content="https://www.omergursel.fr">
     <meta property="og:type" content="website">
     
     <!-- Meta tags Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Ömer Gürsel - Développeur Web Full Stack">
-    <meta name="twitter:description" content="Portfolio professionnel présentant mes projets et compétences en développement web">
+    <meta name="twitter:title" content="Ömer Gürsel - QA Software Test Engineer">
+    <meta name="twitter:description" content="Portfolio de Ömer Gürsel - QA Software Test Engineer">
     <meta name="twitter:image" content="img/logomenu.png">
     
     <!-- Thème et couleurs -->
@@ -37,136 +37,74 @@
     <!-- Préchargement des ressources -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" href="img/paysage1.jpg" as="image">
     
     <!-- Polices -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="css/styles_common.css">
     <link rel="stylesheet" href="css/styles_index.css">
+    <link rel="stylesheet" href="css/styles_animation.css">
     
-    <title>Accueil - Ömer Gürsel</title>
+    <title>Ömer Gürsel - QA Software Test Engineer</title>
 </head>
 
 <body>
-    <header>
-        <nav class="navbar navbar-expand-lg fixed-top">
-            <div class="container">
-                <a class="navbar-brand" href="index.html" aria-label="Retour à l'accueil">
-                    <img src="img/logomenu.png" alt="Logo Ömer Gürsel" width="50" height="50">
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
-                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <i class="fas fa-bars text-white"></i>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item">
-                            <a class="nav-link active" href="index.html" aria-current="page">Accueil</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="parcours.html">Mon parcours</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="competences.html">Mes compétences</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="contact.html">Me contacter</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="connexion.html">Se connecter</a>
-                        </li>
-                    </ul>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="img/logomenu.png" alt="Logo Ömer Gürsel">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="parcours.html">Parcours</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="competences.html">Compétences</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="wrapper">
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Ömer Gürsel</h1>
+                <p>QA Software Test Engineer spécialisé dans l'automatisation des tests et l'assurance qualité</p>
+                <div class="cta-buttons">
+                    <a href="contact.html" class="btn btn-primary">Me contacter</a>
+                    <a href="parcours.html" class="btn btn-outline">Mon parcours</a>
                 </div>
             </div>
-        </nav>
-    </header>
+        </section>
+    </div>
 
-    <main class="flex-grow-1 d-flex align-items-center">
-        <div class="container">
-            <section class="presentation text-center" aria-labelledby="presentation-title">
-                <h1 id="presentation-title" class="display-3 mb-4 fw-bold">Je m'appelle Ömer Gürsel</h1>
-                <p class="lead mb-5">Développeur Web Full Stack passionné par la création d'expériences numériques innovantes</p>
-                <div class="d-flex justify-content-center gap-3">
-                    <a href="contact.html" class="btn btn-primary btn-lg">
-                        Me contacter
-                        <i class="fas fa-arrow-right ms-2"></i>
-                    </a>
-                    <a href="competences.html" class="btn btn-outline-light btn-lg">
-                        Mes compétences
-                        <i class="fas fa-code ms-2"></i>
-                    </a>
-                </div>
-            </section>
-        </div>
-    </main>
-
-    <footer class="text-center">
-        <div class="container">
-            <p class="mb-3">
-                Contactez-moi: 
-                <a href="mailto:contact@omergursel.com" class="text-white text-decoration-none" aria-label="Envoyer un email">
-                    contact@omergursel.com
-                </a>
-            </p>
-            <ul class="social-links">
-                <li>
-                    <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-                        <i class="fab fa-facebook"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                </li>
-            </ul>
-        </div>
+    <footer class="footer">
+        <p>© 2025 Ömer Gürsel - Tous droits réservés</p>
     </footer>
 
-    <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/animation.js"></script>
     <script>
-        // Effet de scroll sur le header avec optimisation des performances
-        let lastScrollPosition = 0;
-        const header = document.querySelector('.navbar');
-        const scrollThreshold = 50;
-
-        const handleScroll = () => {
-            requestAnimationFrame(() => {
-                const currentScrollPosition = window.scrollY;
-                
-                if (Math.abs(currentScrollPosition - lastScrollPosition) > scrollThreshold) {
-                    if (currentScrollPosition > scrollThreshold) {
-                        header.classList.add('scrolled');
-                    } else {
-                        header.classList.remove('scrolled');
-                    }
-                    lastScrollPosition = currentScrollPosition;
-                }
-            });
-        };
-
-        // Utilisation d'un event listener passif pour de meilleures performances
-        window.addEventListener('scroll', handleScroll, { passive: true });
-
-        // Gestion du chargement des images
-        document.addEventListener('DOMContentLoaded', () => {
-            const images = document.querySelectorAll('img');
-            images.forEach(img => {
-                img.addEventListener('error', () => {
-                    img.src = '/img/fallback-image.png';
-                    img.alt = 'Image non disponible';
-                });
-            });
+        AOS.init({
+            duration: 800,
+            once: true
         });
     </script>
 </body>
