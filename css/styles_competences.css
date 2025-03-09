@@ -1,80 +1,478 @@
-* {
+/* Variables CSS globales */
+:root {
+    /* Couleurs */
+    --primary-color: #4CAF50;
+    --primary-color-dark: #45a049;
+    --text-color: #ffffff;
+    --text-color-muted: rgba(255, 255, 255, 0.8);
+    --background-overlay: rgba(0, 0, 0, 0.8);
+    --header-bg: rgba(0, 0, 0, 0.7);
+    --header-bg-scrolled: rgba(0, 0, 0, 0.9);
+    --card-bg: rgba(255, 255, 255, 0.1);
+    --progress-bg: rgba(255, 255, 255, 0.1);
+    --progress-fill: var(--primary-color);
+    
+    /* Espacements */
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 4rem;
+    
+    /* Typographie */
+    --font-family-base: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    --font-size-sm: 0.875rem;
+    --font-size-base: 1rem;
+    --font-size-lg: 1.25rem;
+    --font-size-xl: 1.5rem;
+    --font-size-2xl: 2rem;
+    --font-size-3xl: 2.5rem;
+    --font-size-4xl: 3rem;
+    
+    /* Bordures */
+    --border-radius-sm: 4px;
+    --border-radius-md: 8px;
+    --border-radius-lg: 16px;
+    
+    /* Transitions */
+    --transition-fast: 200ms ease;
+    --transition-normal: 300ms ease;
+    --transition-slow: 500ms ease;
+    
+    /* Ombres */
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+    
+    /* Layout */
+    --container-max-width: 1200px;
+    --header-height: 80px;
+    --grid-gap: 2rem;
+    --card-min-width: 300px;
+}
+
+/* Reset et styles de base */
+*,
+*::before,
+*::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
 }
 
 body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    background: url('/img/paysage2.png') no-repeat;
+    font-family: var(--font-family-base);
+    color: var(--text-color);
+    background-image: linear-gradient(var(--background-overlay), var(--background-overlay)), 
+                      url('/img/paysage1.jpg');
     background-size: cover;
     background-position: center;
+    background-attachment: fixed;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
+/* Header et Navigation */
 header {
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 20px;
+    background-color: var(--header-bg);
+    padding: var(--spacing-md);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: background-color var(--transition-normal);
+    will-change: background-color;
+}
+
+header.scrolled {
+    background-color: var(--header-bg-scrolled);
+    box-shadow: var(--shadow-md);
 }
 
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+.logo {
+    transform: translateY(0);
+    transition: transform var(--transition-normal);
+}
+
+.logo:hover {
+    transform: translateY(-2px);
 }
 
 .logo img {
-    height: 50px; /* Ajustez la taille de votre logo si nécessaire */
+    height: 50px;
+    width: auto;
+    transition: filter var(--transition-normal);
+    will-change: filter;
+}
+
+.logo img:hover {
+    filter: brightness(1.2);
 }
 
 .menu ul {
     display: flex;
-    list-style-type: none;
-}
-
-.menu ul li {
-    margin-right: 20px;
+    list-style: none;
+    gap: var(--spacing-xl);
 }
 
 .menu ul li a {
-    color: #fff;
+    color: var(--text-color);
     text-decoration: none;
-    font-size: 16px;
-    font-weight: bold;
+    font-size: var(--font-size-base);
+    font-weight: 500;
+    position: relative;
+    padding: var(--spacing-xs) 0;
+    transition: color var(--transition-normal);
 }
 
-.menu ul li a:hover {
-    text-decoration: underline;
+.menu ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--text-color);
+    transition: width var(--transition-normal);
+    will-change: width;
 }
 
+.menu ul li a:hover,
+.menu ul li a[aria-current="page"] {
+    color: var(--text-color-muted);
+}
+
+.menu ul li a:hover::after,
+.menu ul li a[aria-current="page"]::after {
+    width: 100%;
+}
+
+/* Contenu principal */
 .wrapper {
+    flex: 1;
+    padding-top: calc(var(--custom-spacing-xl) + 80px);
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    width: 100%;
+}
+
+.main-title {
+    text-align: center;
+    font-size: var(--font-size-4xl);
+    margin-bottom: var(--spacing-xl);
+    font-weight: 700;
+    position: relative;
+    padding-bottom: var(--spacing-md);
+}
+
+.main-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--text-color), transparent);
+}
+
+.skills-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xl);
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.skills-category {
+    margin-bottom: var(--spacing-xl);
+}
+
+.skills-category h2 {
+    font-size: var(--font-size-2xl);
+    margin-bottom: var(--spacing-lg);
+    color: var(--text-color);
+    text-align: center;
+    position: relative;
+    padding-bottom: var(--spacing-sm);
+}
+
+.skills-category h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 2px;
+    background-color: var(--primary-color);
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(var(--card-min-width), 1fr));
+    gap: var(--grid-gap);
+}
+
+.skill-card {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 1rem;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.skill-card i {
+    font-size: 3rem;
+    color: var(--bs-primary);
+    margin-bottom: 1.5rem;
+}
+
+.skill-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--bs-body-color);
+}
+
+.skill-card p {
+    color: rgba(255, 255, 255, 0.8);
+    margin-top: 1rem;
+    font-size: 0.9rem;
+}
+
+.skill-level {
+    margin: 1.5rem 0;
+}
+
+.progress {
+    height: 8px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    background-color: var(--bs-primary);
+    transition: width 1s ease-in-out;
+}
+
+/* Animation des cartes au scroll */
+[data-aos] {
+    pointer-events: none;
+}
+
+[data-aos].aos-animate {
+    pointer-events: auto;
+}
+
+/* Footer */
+footer {
+    background-color: var(--header-bg);
+    padding: var(--spacing-lg) var(--spacing-md);
+    text-align: center;
+    margin-top: auto;
+}
+
+footer p {
+    margin-bottom: var(--spacing-md);
+}
+
+footer a {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color var(--transition-normal);
+}
+
+footer a:hover {
+    color: var(--primary-color);
+}
+
+.social-links {
+    list-style: none;
     display: flex;
     justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    margin-top: 50px;
+    gap: var(--spacing-md);
 }
 
-.competences-block {
-    width: 300px;
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(10px);
-    border: 2px solid rgba(255, 255, 255, 0.5);
-    border-radius: 10px;
-    padding: 20px;
-    margin: 20px;
-    text-align: center;
+.social-links a {
+    color: var(--text-color);
+    font-size: var(--font-size-xl);
+    transition: transform var(--transition-normal), color var(--transition-normal);
+    will-change: transform;
 }
 
-.competences-block h1 {
-    color: #fff;
-    font-size: 24px;
-    margin-bottom: 10px;
+.social-links a:hover {
+    color: var(--primary-color);
+    transform: translateY(-3px);
 }
 
-.competences-block h3 {
-    color: #fff;
-    font-size: 18px;
+/* Media Queries */
+@media (max-width: 768px) {
+    :root {
+        --font-size-4xl: 2.5rem;
+        --font-size-2xl: 1.75rem;
+        --spacing-xl: 2rem;
+        --grid-gap: 1.5rem;
+    }
+
+    .menu ul {
+        gap: var(--spacing-md);
+    }
+
+    .menu ul li a {
+        font-size: var(--font-size-sm);
+    }
+
+    .wrapper {
+        padding-top: calc(var(--custom-spacing-lg) + 80px);
+    }
+
+    .skill-card {
+        padding: 1.5rem;
+    }
+
+    .skill-card i {
+        font-size: 2.5rem;
+    }
+
+    .skill-card h3 {
+        font-size: 1.25rem;
+    }
+}
+
+@media (max-width: 576px) {
+    :root {
+        --font-size-4xl: 2rem;
+        --card-min-width: 250px;
+    }
+
+    .navbar {
+        flex-direction: column;
+        gap: var(--spacing-md);
+    }
+
+    .menu ul {
+        flex-direction: column;
+        align-items: center;
+        gap: var(--spacing-sm);
+    }
+
+    .skill-card {
+        padding: 1rem;
+    }
+
+    .skill-card i {
+        font-size: 2rem;
+    }
+
+    .skill-card h3 {
+        font-size: 1.1rem;
+    }
+
+    .skill-card p {
+        font-size: 0.8rem;
+    }
+}
+
+/* Optimisations de performance */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+
+    .skill-level .progress {
+        transition: none;
+    }
+}
+
+/* Accessibilité */
+@media (prefers-contrast: high) {
+    :root {
+        --text-color-muted: #ffffff;
+        --background-overlay: rgba(0, 0, 0, 0.9);
+        --card-bg: rgba(0, 0, 0, 0.9);
+        --progress-bg: rgba(255, 255, 255, 0.3);
+    }
+}
+
+/* Support d'impression */
+@media print {
+    body {
+        background: none;
+        color: #000;
+    }
+
+    header,
+    footer {
+        display: none;
+    }
+
+    .wrapper {
+        padding: var(--spacing-md);
+    }
+
+    .skill-card {
+        break-inside: avoid;
+        page-break-inside: avoid;
+        background: none;
+        border: 1px solid #000;
+        box-shadow: none;
+    }
+
+    .skill-card i {
+        color: #000;
+    }
+
+    .progress {
+        border: 1px solid #000;
+        background-color: transparent;
+    }
+
+    .progress-bar {
+        background-color: #000;
+    }
 }
