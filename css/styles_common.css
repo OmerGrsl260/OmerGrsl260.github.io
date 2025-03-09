@@ -1,72 +1,131 @@
 /* Variables CSS globales */
 :root {
     /* Couleurs */
-    --bs-primary: #4CAF50;
-    --bs-primary-rgb: 76, 175, 80;
-    --bs-primary-dark: #45a049;
-    --bs-body-color: #ffffff;
-    --bs-body-color-rgb: 255, 255, 255;
-    --bs-body-bg-dark: rgba(0, 0, 0, 0.8);
-    --bs-navbar-bg: rgba(0, 0, 0, 0.2);
-    --bs-navbar-bg-scrolled: rgba(0, 0, 0, 0.4);
+    --primary-color: #4CAF50;
+    --primary-color-dark: #45a049;
+    --text-color: #ffffff;
+    --text-color-muted: rgba(255, 255, 255, 0.8);
+    --background-overlay: rgba(0, 0, 0, 0.45);
+    --header-bg: rgba(0, 0, 0, 0.7);
+    --header-bg-scrolled: rgba(0, 0, 0, 0.9);
+    --card-bg: rgba(255, 255, 255, 0.1);
+    --input-bg: rgba(255, 255, 255, 0.05);
+    --input-border: rgba(255, 255, 255, 0.1);
+    --error-color: #ff4444;
+    --success-color: #4CAF50;
     
-    /* Espacements personnalisés */
-    --custom-spacing-xs: 0.25rem;
-    --custom-spacing-sm: 0.5rem;
-    --custom-spacing-md: 1rem;
-    --custom-spacing-lg: 2rem;
-    --custom-spacing-xl: 4rem;
+    /* Espacements */
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 4rem;
+    
+    /* Typographie */
+    --font-family-base: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    --font-size-sm: 0.875rem;
+    --font-size-base: 1rem;
+    --font-size-lg: 1.25rem;
+    --font-size-xl: 1.5rem;
+    --font-size-2xl: 2rem;
+    --font-size-3xl: 2.5rem;
+    --font-size-4xl: 3rem;
+    
+    /* Bordures */
+    --border-radius-sm: 4px;
+    --border-radius-md: 8px;
+    --border-radius-lg: 16px;
+    
+    /* Transitions */
+    --transition-fast: 200ms ease;
+    --transition-normal: 300ms ease;
+    --transition-slow: 500ms ease;
+    
+    /* Ombres */
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+    
+    /* Layout */
+    --container-max-width: 1200px;
+    --header-height: 80px;
 }
 
-/* Styles de base */
+/* Reset et styles de base */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+    overflow-y: scroll;
+}
+
 body {
-    font-family: 'Poppins', var(--bs-body-font-family);
-    background-image: linear-gradient(var(--bs-body-bg-dark), var(--bs-body-bg-dark)), 
-                      url('/img/paysage1.jpg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    min-height: 100vh;
     display: flex;
     flex-direction: column;
+    min-height: 100vh;
+    font-family: var(--font-family-base);
+    color: var(--text-color);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 /* Header et Navigation */
 .navbar {
-    background: var(--bs-navbar-bg);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 0 0 1rem 1rem;
+    position: sticky;
+    top: var(--spacing-md);
+    z-index: 1030;
+    background: var(--card-bg);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 1rem;
     transition: all 0.3s ease;
     padding: 1rem;
-    margin: 1rem 1rem 0 1rem;
+    width: min(800px, 100%);
+    margin: var(--spacing-md) auto;
+}
+
+.navbar > .container {
+    max-width: 1320px;
+    width: 100%;
+    padding: 0;
+    margin: 0 auto;
 }
 
 .navbar.scrolled {
-    background: var(--bs-navbar-bg-scrolled);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    margin-top: 0;
+    background: var(--card-bg);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
 }
 
 .navbar-brand img {
     height: 50px;
     width: auto;
-    transition: transform 0.3s ease, filter 0.3s ease;
+    border-radius: 8px;
+    transition: filter var(--transition-normal), transform var(--transition-normal);
 }
 
-.navbar-brand:hover img {
-    transform: translateY(-2px);
+.navbar-brand img:hover {
     filter: brightness(1.2);
+    transform: scale(1.05);
 }
 
 .nav-link {
-    color: var(--bs-body-color) !important;
+    color: var(--text-color) !important;
     position: relative;
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 1rem !important;
     transition: color 0.3s ease;
+    font-size: 0.95rem;
 }
 
 .nav-link::after {
@@ -76,7 +135,7 @@ body {
     left: 0;
     width: 0;
     height: 2px;
-    background-color: var(--bs-body-color);
+    background-color: var(--text-color);
     transition: width 0.3s ease;
 }
 
@@ -85,48 +144,48 @@ body {
     width: 100%;
 }
 
+/* Wrapper commun */
+.wrapper {
+    flex: 1;
+    padding: var(--spacing-lg);
+}
+
 /* Footer */
-footer {
-    background: var(--bs-navbar-bg);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 1rem 1rem 0 0;
-    padding: 2rem 1rem;
-    margin: 0 1rem;
-    margin-top: auto;
+.footer {
+    background: var(--card-bg);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-top: 1px solid rgba(255, 255, 255, 0.25);
+    padding: var(--spacing-md);
+    text-align: center;
 }
 
-.social-links {
-    list-style: none;
-    padding: 0;
+.footer p {
+    color: var(--text-color);
     margin: 0;
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
 }
 
-.social-links a {
-    color: var(--bs-body-color);
-    font-size: 1.5rem;
-    transition: transform 0.3s ease, color 0.3s ease;
+/* Media Queries */
+@media (max-width: 768px) {
+    .navbar {
+        width: calc(100% - var(--spacing-sm) * 2);
+        margin: var(--spacing-sm) auto;
+        border-radius: 0.75rem;
+        padding: 0.75rem;
+    }
 }
 
-.social-links a:hover {
-    color: var(--bs-primary);
-    transform: translateY(-3px);
+@media (max-width: 576px) {
+    .navbar {
+        width: 100%;
+        margin: 0;
+        border-radius: 0;
+        padding: 0.5rem;
+        top: 0;
+    }
 }
 
-/* Utilitaires */
-.text-primary {
-    color: var(--bs-primary) !important;
-}
-
-.bg-primary {
-    background-color: var(--bs-primary) !important;
-}
-
-/* Accessibilité */
+/* Optimisations de performance */
 @media (prefers-reduced-motion: reduce) {
     * {
         animation-duration: 0.01ms !important;
@@ -136,11 +195,12 @@ footer {
     }
 }
 
+/* Accessibilité */
 @media (prefers-contrast: high) {
     :root {
-        --bs-body-color: #ffffff;
-        --bs-body-bg-dark: rgba(0, 0, 0, 0.9);
-        --bs-navbar-bg: rgba(0, 0, 0, 0.9);
+        --text-color-muted: #ffffff;
+        --background-overlay: rgba(0, 0, 0, 0.9);
+        --card-bg: rgba(0, 0, 0, 0.9);
     }
 }
 
@@ -151,41 +211,7 @@ footer {
         color: #000;
     }
 
-    .navbar,
-    footer {
+    .navbar {
         display: none;
-    }
-}
-
-/* Media Queries */
-@media (max-width: 768px) {
-    .navbar {
-        margin: 0.5rem 0.5rem 0 0.5rem;
-        border-radius: 0.75rem;
-        padding: 0.75rem;
-    }
-
-    .navbar.scrolled {
-        margin: 0;
-        border-radius: 0;
-    }
-
-    footer {
-        margin: 0 0.5rem;
-        border-radius: 0.75rem 0.75rem 0 0;
-        padding: 1.5rem 1rem;
-    }
-}
-
-@media (max-width: 576px) {
-    .navbar {
-        margin: 0;
-        border-radius: 0;
-        padding: 0.5rem;
-    }
-
-    footer {
-        margin: 0;
-        border-radius: 0;
     }
 } 
