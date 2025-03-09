@@ -7,8 +7,8 @@
     --bs-body-color: #ffffff;
     --bs-body-color-rgb: 255, 255, 255;
     --bs-body-bg-dark: rgba(0, 0, 0, 0.8);
-    --bs-navbar-bg: rgba(0, 0, 0, 0.7);
-    --bs-navbar-bg-scrolled: rgba(0, 0, 0, 0.9);
+    --bs-navbar-bg: rgba(0, 0, 0, 0.2);
+    --bs-navbar-bg-scrolled: rgba(0, 0, 0, 0.4);
     
     /* Espacements personnalisés */
     --custom-spacing-xs: 0.25rem;
@@ -33,13 +33,18 @@ body {
 
 /* Header et Navigation */
 .navbar {
-    background-color: var(--bs-navbar-bg);
-    transition: background-color 0.3s ease;
+    background: var(--bs-navbar-bg);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
     padding: 1rem;
 }
 
 .navbar.scrolled {
-    background-color: var(--bs-navbar-bg-scrolled);
+    background: var(--bs-navbar-bg-scrolled);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -79,7 +84,10 @@ body {
 
 /* Footer */
 footer {
-    background-color: var(--bs-navbar-bg);
+    background: var(--bs-navbar-bg);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
     padding: 2rem 1rem;
     margin-top: auto;
 }
