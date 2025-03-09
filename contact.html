@@ -2,92 +2,381 @@
 <html lang="fr-FR">
 
 <head>
-    <link rel="icon" type="image/png" href="/img/monfavicon.png" />
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Me contacter - Ömer Gürsel</title>
-    <link rel="stylesheet" href="/css/styles_contact.css" />
-    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <!-- Meta tags essentiels -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Meta tags SEO -->
+    <meta name="description" content="Contactez Ömer Gürsel pour discuter de vos projets de développement web et de collaboration">
+    <meta name="keywords" content="contact, développeur web, Ömer Gürsel, formulaire de contact">
+    <meta name="author" content="Ömer Gürsel">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Meta tags Open Graph -->
+    <meta property="og:title" content="Me Contacter - Ömer Gürsel">
+    <meta property="og:description" content="Contactez Ömer Gürsel pour vos projets web">
+    <meta property="og:image" content="/img/logomenu.png">
+    <meta property="og:url" content="https://omergursel.com/contact">
+    <meta property="og:type" content="website">
+    
+    <!-- Meta tags Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Me Contacter - Ömer Gürsel">
+    <meta name="twitter:description" content="Contactez Ömer Gürsel pour vos projets web">
+    <meta name="twitter:image" content="/img/logomenu.png">
+    
+    <!-- Thème et couleurs -->
+    <meta name="theme-color" content="#4CAF50">
+    
+    <!-- Favicon et icônes -->
+    <link rel="icon" type="image/png" href="/img/monfavicon.png">
+    <link rel="apple-touch-icon" href="/img/monfavicon.png">
+    
+    <!-- Préchargement des ressources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles_common.css">
+    <link rel="stylesheet" href="/css/styles_contact.css">
+    
+    <title>Me Contacter - Ömer Gürsel</title>
 </head>
 
 <body>
     <header>
-        <!-- Barre de navigation supérieure -->
-        <nav class="navbar">
-            <div class="logo">
-                <a href="index.html"><img src="/img/logomenu.png" alt="Votre logo" /></a>
-            </div>
-            <div class="menu">
-                <ul>
-                    <li><a href="parcours.html">Mon parcours</a></li>
-                    <li><a href="competences.html">Mes compétences</a></li>
-                    <li><a href="contact.html">Me contacter</a></li>
-                    <li><a href="connexion.html">Se connecter</a></li>
-                </ul>
+        <nav class="navbar navbar-expand-lg fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="index.html" aria-label="Retour à l'accueil">
+                    <img src="/img/logomenu.png" alt="Logo Ömer Gürsel" width="50" height="50">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fas fa-bars text-white"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="parcours.html">Mon parcours</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="competences.html">Mes compétences</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="contact.html" aria-current="page">Me contacter</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="connexion.html">Se connecter</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </nav>
     </header>
 
-    <div class="wrapper">
-        <div class="contact-form">
-            <form id="contact-form" method="POST">
-                <h1>Contactez-moi</h1>
-                <div class="input-box">
-                    <input type="text" name="name" placeholder="Votre Nom" required />
+    <main class="wrapper">
+        <div class="container py-5">
+            <h1 class="text-center display-4 mb-5" data-aos="fade-down">Me Contacter</h1>
+            
+            <div class="row g-4">
+                <div class="col-lg-5" data-aos="fade-right">
+                    <div class="contact-info">
+                        <div class="info-block">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <h2>Adresse</h2>
+                            <address>123 Rue Example<br>75000 Paris, France</address>
+                        </div>
+                        <div class="info-block">
+                            <i class="fas fa-phone"></i>
+                            <h2>Téléphone</h2>
+                            <p>
+                                <a href="tel:+33123456789" class="text-white text-decoration-none" 
+                                   aria-label="Appeler le +33 1 23 45 67 89">
+                                    +33 1 23 45 67 89
+                                </a>
+                            </p>
+                        </div>
+                        <div class="info-block">
+                            <i class="fas fa-envelope"></i>
+                            <h2>Email</h2>
+                            <p>
+                                <a href="mailto:contact@omergursel.com" class="text-white text-decoration-none" 
+                                   aria-label="Envoyer un email à contact@omergursel.com">
+                                    contact@omergursel.com
+                                </a>
+                            </p>
+                        </div>
+                        <div class="social-block">
+                            <h2>Réseaux sociaux</h2>
+                            <div class="social-icons">
+                                <a href="#" class="social-icon" aria-label="Facebook">
+                                    <i class="fab fa-facebook"></i>
+                                </a>
+                                <a href="#" class="social-icon" aria-label="Twitter">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <a href="#" class="social-icon" aria-label="LinkedIn">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
+                                <a href="#" class="social-icon" aria-label="Instagram">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="input-box">
-                    <input type="email" name="email" placeholder="Votre mail" required />
-                </div>
-                <div class="input-box">
-                    <textarea name="message" placeholder="Votre message" required></textarea>
-                </div>
-                <button type="submit" class="btn">Envoyer</button>
-            </form>
-            <div id="status"></div>
-        </div>
-    </div>
 
-    <div class="contact-info">
-        <div class="info-block">
-            <h2>Adresse du bureau</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <div class="col-lg-7" data-aos="fade-left">
+                    <div class="contact-form">
+                        <form id="contact-form" method="POST" action="https://formsubmit.co/grsl.omer@gmail.com" 
+                              class="needs-validation" novalidate>
+                            <div class="form-group mb-4">
+                                <div class="input-box">
+                                    <i class="fas fa-user"></i>
+                                    <input type="text" 
+                                           class="form-control" 
+                                           id="name" 
+                                           name="name" 
+                                           required 
+                                           autocomplete="name"
+                                           aria-label="Votre nom"
+                                           aria-required="true"
+                                           minlength="2"
+                                           maxlength="50"
+                                    />
+                                    <label for="name">Votre Nom</label>
+                                    <div class="invalid-feedback"></div>
+                                </div>
+                            </div>
+
+                            <div class="form-group mb-4">
+                                <div class="input-box">
+                                    <i class="fas fa-envelope"></i>
+                                    <input type="email" 
+                                           class="form-control" 
+                                           id="email" 
+                                           name="email" 
+                                           required 
+                                           autocomplete="email"
+                                           aria-label="Votre email"
+                                           aria-required="true"
+                                           pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                                    />
+                                    <label for="email">Votre Email</label>
+                                    <div class="invalid-feedback"></div>
+                                </div>
+                            </div>
+
+                            <div class="form-group mb-4">
+                                <div class="input-box">
+                                    <i class="fas fa-comment"></i>
+                                    <textarea class="form-control" 
+                                              id="message" 
+                                              name="message" 
+                                              required 
+                                              aria-label="Votre message"
+                                              aria-required="true"
+                                              minlength="10"
+                                              maxlength="1000"
+                                              rows="5"
+                                    ></textarea>
+                                    <label for="message">Votre Message</label>
+                                    <div class="invalid-feedback"></div>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary w-100 submit-btn">
+                                <span>Envoyer</span>
+                                <i class="fas fa-paper-plane"></i>
+                                <div class="spinner-border spinner-border-sm ms-2 d-none" role="status">
+                                    <span class="visually-hidden">Chargement...</span>
+                                </div>
+                            </button>
+                        </form>
+                        <div id="status" class="alert mt-3 d-none" role="alert"></div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="info-block">
-            <h2>Numéro de téléphone</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        </div>
-        <div class="info-block">
-            <h2>E-mail</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        </div>
-        <div class="info-block">
-            <h2>Réseaux sociaux</h2>
-            <ul>
-                <li>Facebook</li>
-                <li>Twitter</li>
-                <li>LinkedIn</li>
-                <li>Instagram</li>
+    </main>
+
+    <footer class="text-center">
+        <div class="container">
+            <p class="mb-3">
+                © 2024 Ömer Gürsel. Tous droits réservés.
+            </p>
+            <ul class="social-links">
+                <li>
+                    <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </li>
             </ul>
         </div>
-    </div>
+    </footer>
 
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script>
-        document.getElementById('contact-form').addEventListener('submit', function(event) {
+        // Initialisation des animations AOS
+        AOS.init({
+            duration: 800,
+            once: true,
+            disable: window.matchMedia('(prefers-reduced-motion: reduce)').matches
+        });
+
+        // Effet de scroll sur le header
+        let lastScrollPosition = 0;
+        const header = document.querySelector('.navbar');
+        const scrollThreshold = 50;
+
+        const handleScroll = () => {
+            requestAnimationFrame(() => {
+                const currentScrollPosition = window.scrollY;
+                
+                if (Math.abs(currentScrollPosition - lastScrollPosition) > scrollThreshold) {
+                    if (currentScrollPosition > scrollThreshold) {
+                        header.classList.add('scrolled');
+                    } else {
+                        header.classList.remove('scrolled');
+                    }
+                    lastScrollPosition = currentScrollPosition;
+                }
+            });
+        };
+
+        window.addEventListener('scroll', handleScroll, { passive: true });
+
+        // Validation du formulaire
+        const form = document.getElementById('contact-form');
+        const inputs = form.querySelectorAll('input, textarea');
+        const status = document.getElementById('status');
+
+        const validateInput = (input) => {
+            let isValid = true;
+            let errorMessage = '';
+
+            if (input.required && !input.value.trim()) {
+                isValid = false;
+                errorMessage = 'Ce champ est requis';
+            } else if (input.type === 'email' && input.value) {
+                const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+                if (!emailPattern.test(input.value)) {
+                    isValid = false;
+                    errorMessage = 'Veuillez entrer une adresse email valide';
+                }
+            } else if (input.minLength && input.value.length < input.minLength) {
+                isValid = false;
+                errorMessage = `Minimum ${input.minLength} caractères requis`;
+            } else if (input.maxLength && input.value.length > input.maxLength) {
+                isValid = false;
+                errorMessage = `Maximum ${input.maxLength} caractères autorisés`;
+            }
+
+            input.classList.toggle('is-invalid', !isValid);
+            input.classList.toggle('is-valid', isValid && input.value.trim());
+            input.nextElementSibling.nextElementSibling.textContent = errorMessage;
+            return isValid;
+        };
+
+        inputs.forEach(input => {
+            ['input', 'blur'].forEach(event => {
+                input.addEventListener(event, () => validateInput(input));
+            });
+        });
+
+        // Gestion du formulaire
+        form.addEventListener('submit', async function(event) {
             event.preventDefault();
             
-            const form = event.target;
-            const formData = new FormData(form);
+            let isValid = true;
+            inputs.forEach(input => {
+                if (!validateInput(input)) {
+                    isValid = false;
+                }
+            });
+
+            if (!isValid) {
+                status.textContent = 'Veuillez corriger les erreurs dans le formulaire';
+                status.classList.remove('d-none', 'alert-success');
+                status.classList.add('alert-danger');
+                return;
+            }
             
-            axios.post('https://formsubmit.co/grsl.omer@gmail.com', formData)
-                .then(response => {
-                    document.getElementById('status').innerText = 'Message envoyé avec succès !';
-                    form.reset();
-                })
-                .catch(error => {
-                    document.getElementById('status').innerText = 'Échec de l\'envoi du message. Veuillez réessayer.';
+            const submitBtn = form.querySelector('.submit-btn');
+            const spinner = submitBtn.querySelector('.spinner-border');
+            
+            submitBtn.disabled = true;
+            spinner.classList.remove('d-none');
+            
+            try {
+                const formData = new FormData(form);
+                await axios.post('https://formsubmit.co/grsl.omer@gmail.com', formData);
+                
+                status.textContent = 'Message envoyé avec succès !';
+                status.classList.remove('d-none', 'alert-danger');
+                status.classList.add('alert-success');
+                form.reset();
+                
+                inputs.forEach(input => {
+                    input.classList.remove('is-valid', 'is-invalid');
                 });
+            } catch (error) {
+                console.error('Erreur lors de l\'envoi:', error);
+                status.textContent = 'Échec de l\'envoi. Veuillez réessayer.';
+                status.classList.remove('d-none', 'alert-success');
+                status.classList.add('alert-danger');
+            } finally {
+                submitBtn.disabled = false;
+                spinner.classList.add('d-none');
+                
+                setTimeout(() => {
+                    status.classList.add('d-none');
+                    status.classList.remove('alert-success', 'alert-danger');
+                    status.textContent = '';
+                }, 5000);
+            }
+        });
+
+        // Animation des labels
+        inputs.forEach(input => {
+            const handleInputState = () => {
+                const label = input.nextElementSibling;
+                label.classList.toggle('active', input === document.activeElement || input.value.length > 0);
+            };
+
+            input.addEventListener('focus', handleInputState);
+            input.addEventListener('blur', handleInputState);
+            input.addEventListener('input', handleInputState);
+
+            handleInputState();
+        });
+
+        // Gestion des erreurs de chargement des images
+        document.addEventListener('DOMContentLoaded', () => {
+            const images = document.querySelectorAll('img');
+            images.forEach(img => {
+                img.addEventListener('error', () => {
+                    img.src = '/img/fallback-image.png';
+                    img.alt = 'Image non disponible';
+                });
+            });
         });
     </script>
 </body>
