@@ -116,8 +116,7 @@ body {
 }
 
 .navbar-brand img:hover {
-    filter: brightness(1.2);
-    transform: scale(1.05);
+    transform: scale(1.2);
 }
 
 .nav-link {
